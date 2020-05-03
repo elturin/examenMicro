@@ -1,3 +1,9 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health
+        
 # Discovery Server Access
 eureka:
   client:
@@ -7,3 +13,11 @@ eureka:
 # HTTP Server
 server:
   port: ${PORT:3333}   # HTTP (Tomcat) port
+  
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/carritomicro?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: 
+  jpa:
+    generate-ddl: true
